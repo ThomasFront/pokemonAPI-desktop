@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { client } from '../../api'
+// why do you leave unused variables?
 import { Link } from 'react-router-dom'
 import { BtnWrapper, LinkItem, LinkWrapper, PokemonFavShow, Test } from './AllPokemons.styles'
 import { Button } from '../../components/Button/Button.styles'
@@ -16,6 +17,8 @@ function AllPokemons() {
 
 	const navigate = useNavigate()
 
+  // this is unreadable, I don't know what it does
+  // I believe there's a better way to handle parameters in path
 	const parsePage = url => {
 		if (!url) {
 			return ''
@@ -23,6 +26,7 @@ function AllPokemons() {
 		return `?${url.split('?')[1]}`
 	}
 
+  // this should be in a separate file reserved for api calls
 	const fetchData = pageToFetch => {
 		client.get(`/pokemon${pageToFetch || ''}`).then(({ data }) => {
 			setPokemons(data.results)
@@ -61,11 +65,18 @@ function AllPokemons() {
 						onClick={() => navigate(`/pokemon/${name}`, { replace: true })}>
 						{name}
 						<PokemonFavShow onClick={e => handleFavourite(e, name)}>
+              {
+              /* this should be a separate component that covers the star logic */
+              // also, the starHalfAlt icon is wrong here
+              // it should be a star outline
+              }
 							{favs.includes(name) ? <FaStar /> : <FaStarHalfAlt />}
 						</PokemonFavShow>
 					</LinkItem>
 				))}
 			</LinkWrapper>
+
+      {/* buttons cover separate part of logic, it should have it's own component */}
 			<BtnWrapper>
 				<Button disabled={!prevPage} onClick={() => fetchData(prevPage)}>
 					Prev Page

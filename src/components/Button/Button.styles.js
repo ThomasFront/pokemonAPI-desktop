@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 
+// use rems for padding
 export const Button = styled.button`
 	cursor: pointer;
 	padding: 0.5em 1em;

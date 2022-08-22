@@ -3,6 +3,8 @@ import { useLocation } from 'react-router-dom'
 import { LayoutItem, LayoutWrapper, Wrapper } from './Layout.styles'
 
 function Layout({ children }) {
+  // use destructuring when possible
+	// const { pathname } = useLocation()
 	const location = useLocation()
 
 	return (

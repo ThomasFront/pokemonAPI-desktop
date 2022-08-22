@@ -1,6 +1,10 @@
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
+// either the name is incorrect or this bottom margin
+// I'd expect a layout wrapper to be a container for page content
+// so it should have some padding.
+// I think this is a pageHeaderWrapper
 export const LayoutWrapper = styled.nav`
 	margin: 0 auto 32px;
 	max-width: 1200px;
@@ -16,6 +20,7 @@ export const LayoutWrapper = styled.nav`
 	height: 60px;
 `
 
+// this font size should be a rem value
 export const LayoutItem = styled(Link)`
 	cursor: pointer;
 	text-decoration: none;

@@ -1,5 +1,18 @@
 import styled from 'styled-components'
 
+// AFAIR styled components should be used like this:
+
+
+export const styledElement = styled.div`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: 90vh;
+	background-color: #333;
+	margin-top: 3em;
+	border-radius: 6px;
+`
 export const Wrapper = styled.div`
 	display: flex;
 	justify-content: center;
