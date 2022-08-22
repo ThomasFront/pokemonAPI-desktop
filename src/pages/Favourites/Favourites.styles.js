@@ -7,3 +7,4 @@ export const Wrapper = styled.div`
 	flex-wrap: wrap;
 	margin: 7em auto;
 `
+// don't use ems in margins, use rems instead
